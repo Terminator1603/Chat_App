@@ -14,10 +14,10 @@ class MyClient{
         System.out.println("Connected");
           
         String st1="",st2="";  
-        while(!str.equals("stop")){  
+        while(!st1.equals("stop")){  
             System.out.println("Enter a message");
             st1=br.readLine();  
-            ous.writeUTF(str);  
+            ous.writeUTF(st1);  
             ous.flush();  
             st2=(String)ois.readUTF();  
             System.out.println("Server says: "+st2);  
