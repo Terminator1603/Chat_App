@@ -17,7 +17,7 @@ class MyServer{
         String st1="",st2="";
         while(!st1.equals("stop")){
             st1 = (String)ois.readUTF();
-            System.out.println(st1);
+            System.out.println("Client says : "+st1);
             System.out.println("Enter a message");
             st2 = br.readLine();
             ous.writeUTF(st2);
