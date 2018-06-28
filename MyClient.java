@@ -13,14 +13,14 @@ class MyClient{
         DataOutputStream ous = new DataOutputStream(s.getOutputStream());
         System.out.println("Connected");
           
-        String str="",str2="";  
+        String st1="",st2="";  
         while(!str.equals("stop")){  
             System.out.println("Enter a message");
-            str=br.readLine();  
+            st1=br.readLine();  
             ous.writeUTF(str);  
             ous.flush();  
-            str2=(String)ois.readUTF();  
-            System.out.println("Server says: "+str2);  
+            st2=(String)ois.readUTF();  
+            System.out.println("Server says: "+st2);  
         }  
         ous.close();
         s.close();
