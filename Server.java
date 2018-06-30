@@ -20,14 +20,13 @@ public class Server{
         while(true){
             try{
                 s = ss2.accept();
-                System.out.println("Y'all there's a connection");
-                
-                arrli.add(new ServerThread(s,chat));
+                System.out.println("Connecting new client");
+                arrli.add(new ServerThread(s,chat,n+1));
                 arrli.get(n).start();
                 n++;
             }catch(Exception e){
-                //e.printStackTrace();
-                //System.out.println("Honestly how are you so bad (connection error)");
+                e.printStackTrace();
+                System.out.println("Honestly how are you so bad (connection error)");
             }
         }
     }

@@ -25,15 +25,16 @@ class Client{
         String st1="",st2="";  
         AcquireChat ac = new AcquireChat(ois,ous,clientID);
         ac.start();
-        while(!st1.equals("stop")){
+        while(!st1.equals("/stop")){
             System.out.print(clientID+": ");
             st1=br.readLine();
             ous.writeUTF(clientID+st1);  
             ous.flush();  
-            //System.out.println((String)ois.readUTF());
         }  
         ous.close();
         s.close();
+        System.out.println("Connection Terminated");
+        System.exit(0);
     }
     public static String idGenerator(int n){
         String id = "";
